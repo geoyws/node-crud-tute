@@ -13,8 +13,8 @@ var app = express();
 var mongoose = require('mongoose');
 
 // connect to database
-var MONGOHQ_URL = 'mongodb://<ispaaa-demo>:<a2052314bc571bb0f82224d357eb9a52>@kahana.mongohq.com:10095/app26192063';
-//mongoose.connect(MONGOHQ_URL);
+process.env.MONGOHQ_URL = 'mongodb://ispaaa:sejahtera@kahana.mongohq.com:10095/app26192063';
+mongoose.connect(process.env.MONGOHQ_URL);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
