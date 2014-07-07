@@ -9,6 +9,21 @@ router.use(function(req, res, next) {
   next();
 });
 
+// ROUTE '/fakeapi/users/1'
+router.route('/fakeapi/users/1')
+
+  .get(function(req, res) {
+    var fakeUserModel = {
+      "UserDetailId": "0001",
+      "FirstName": "George",
+      "LastName": "Yong",
+      "Email": "georgeyws@ifca.com.my",
+      "Phone": "0162228603",
+      "ReportTo": "Carso Leong"
+    };
+    res.json(fakeUserModel);
+  });
+
 // ROUTE '/bears'
 router.route('/bears')
 

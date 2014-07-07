@@ -4,6 +4,7 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var cors = require('cors');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -15,6 +16,7 @@ var mongoose = require('mongoose');
 // connect to database
 process.env.MONGOHQ_URL = 'mongodb://ispaaa:sejahtera@kahana.mongohq.com:10095/app26192063';
 mongoose.connect(process.env.MONGOHQ_URL);
+    
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -26,6 +28,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// allow for CORS
+app.use(cors());
 
 app.use('/', routes);
 app.use('/users', users);
