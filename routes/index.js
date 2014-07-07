@@ -13,7 +13,7 @@ router.use(function(req, res, next) {
 router.route('/fakeapi/users/1')
 
   .get(function(req, res) {
-    var fakeUserModel = {
+    var fakeModel = {
       "UserDetailId": "0001",
       "FirstName": "George",
       "LastName": "Yong",
@@ -21,7 +21,36 @@ router.route('/fakeapi/users/1')
       "Phone": "0162228603",
       "ReportTo": "Carso Leong"
     };
-    res.json(fakeUserModel);
+    res.json(fakeModel);
+  });
+
+// ROUTE '/fakeapi/myactivity/date'
+router.route('/fakeapi/myactivity/date')
+
+  .get(function(req, res) {
+    var fakeModel = [
+      {
+        "Activity": "Bug Fix",
+        "AccountDescription": "SP Setia Property",
+        "Hours": "3"
+      },
+      {
+        "Activity": "Bug Fix",
+        "AccountDescription": "SP Setia Hardware",
+        "Hours": "4"
+      },
+      {
+        "Activity": "Bug Fix",
+        "AccountDescription": "SP Setia Retail",
+        "Hours": "2"
+      },
+      {
+        "Activity": "Meeting",
+        "AccountDescription": "SP Setia Property",
+        "Hours": "1"
+      }
+    ];
+    res.json(fakeModel);
   });
 
 // ROUTE '/bears'
